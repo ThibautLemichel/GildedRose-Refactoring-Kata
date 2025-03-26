@@ -21,7 +21,7 @@ class DefaultItemTest {
     @ParameterizedTest
     @MethodSource("defaultItemsProvider")
     void testDefaultItemsQuality(String name, int sellIn, int quality, int expectedQuality) {
-        items = new Item[]{ new Item(name, sellIn, quality) };
+        items = new Item[]{ new DefaultItem(name, sellIn, quality) };
         app = new GildedRose(items);
 
         app.updateQuality();

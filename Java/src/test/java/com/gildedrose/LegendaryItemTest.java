@@ -21,7 +21,7 @@ class LegendaryItemTest {
     @ParameterizedTest
     @MethodSource("legendaryItemsProvider")
     void testLegendaryItemQuality(String name, int sellIn, int quality, int expectedQuality) {
-        items = new Item[]{ new Item(name, sellIn, quality) };
+        items = new Item[]{ new LegendaryItem(name, sellIn, quality) };
         app = new GildedRose(items);
 
         app.updateQuality();

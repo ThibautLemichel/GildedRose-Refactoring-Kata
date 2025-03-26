@@ -21,7 +21,7 @@ class BackstagePassesTest {
     @ParameterizedTest
     @MethodSource("backstagePassesProvider")
     void testBackstagePassesQuality(String name, int sellIn, int quality, int expectedQuality) {
-        items = new Item[]{ new Item(name, sellIn, quality) };
+        items = new Item[]{ new BackstagePasses(name, sellIn, quality) };
         app = new GildedRose(items);
 
         app.updateQuality();

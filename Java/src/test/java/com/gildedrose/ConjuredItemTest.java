@@ -21,7 +21,7 @@ class ConjuredItemTest {
     @ParameterizedTest
     @MethodSource("conjuredItemsProvider")
     void testConjuredItemsQuality(String name, int sellIn, int quality, int expectedQuality) {
-        items = new Item[]{ new Item(name, sellIn, quality) };
+        items = new Item[]{ new AgedBrie(name, sellIn, quality) };
         app = new GildedRose(items);
 
         app.updateQuality();
