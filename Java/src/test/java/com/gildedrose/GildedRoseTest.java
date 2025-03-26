@@ -32,24 +32,24 @@ public class GildedRoseTest {
     static Stream<Object[]> itemProvider() {
         return Stream.of(
             // Legendary item: Quality should never decrease
-            new Object[]{ new LegendaryItem(10, 35), 35 },
-            new Object[]{ new LegendaryItem(5, 80), 80 },
+            new Object[]{ new LegendaryItem("Sulfuras, Hand of Ragnaros",10, 35), 35 },
+            new Object[]{ new LegendaryItem("Sulfuras, Hand of Ragnaros",5, 80), 80 },
             // Aged Brie: Quality increases with age
-            new Object[]{ new AgedBrie(5,20), 21},
+            new Object[]{ new AgedBrie("Aged Brie",5,20), 21},
             // Aged Brie: Quality should never exceed 50
-            new Object[]{ new AgedBrie(5, 50), 50},
+            new Object[]{ new AgedBrie("Aged Brie",5, 50), 50},
             // Backstage passes: Quality increases by 3 when SellIn is 5 days or less
-            new Object[]{ new BackstagePasses(5, 20), 23},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",5, 20), 23},
             // Backstage passes: Quality increases by 2 when SellIn is 10 days or less
-            new Object[]{ new BackstagePasses(10, 20), 22},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",10, 20), 22},
             // Backstage passes: Quality increases by 1 when SellIn is more than 10 days
-            new Object[]{ new BackstagePasses(15, 20), 21},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",15, 20), 21},
             // Backstage passes: Quality drops to 0 after the concert
-            new Object[]{ new BackstagePasses(-1, 20), 0},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",-1, 20), 0},
             // Backstage passes: Quality should never exceed 50
-            new Object[]{ new BackstagePasses(5, 48), 50},
-            new Object[]{ new BackstagePasses(10, 49), 50},
-            new Object[]{ new BackstagePasses(11, 50), 50},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",5, 48), 50},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",10, 49), 50},
+            new Object[]{ new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",11, 50), 50},
             // Generic item: Quality degrades twice as fast after SellIn has passed
             new Object[]{ new DefaultItem("+5 Dexterity Vest", -1, 20), 18},
             // Generic item: Quality decreases by 1 when SellIn is positive
