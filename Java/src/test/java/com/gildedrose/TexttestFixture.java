@@ -6,13 +6,13 @@ public class TexttestFixture {
 
         Item[] items = new Item[]{
             new DefaultItem("+5 Dexterity Vest", 10, 20),
-            new AgedBrie(2, 0),
+            new AgedBrie("Aged Brie", 2, 0),
             new DefaultItem("Elixir of the Mongoose", 5, 7),
-            new LegendaryItem(0, 80),
-            new LegendaryItem(-1, 80),
-            new BackstagePasses(15, 20),
-            new BackstagePasses(10, 49),
-            new BackstagePasses(5, 49),
+            new LegendaryItem("Sulfuras, Hand of Ragnaros",0, 80),
+            new LegendaryItem("Sulfuras, Hand of Ragnaros",-1, 80),
+            new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",15, 20),
+            new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",10, 49),
+            new BackstagePasses("Backstage passes to a TAFKAL80ETC concert",5, 49),
             // this conjured item does not work properly yet
             new DefaultItem("Conjured Mana Cake", 3, 6)
         };
