@@ -2,17 +2,22 @@ package com.gildedrose;
 
 public class ItemFactory {
     public static Item createItem(String name, int sellIn, int quality) {
+        Item item = null;
         switch (name) {
             case "Aged Brie":
-                return new AgedBrie(name, sellIn, quality);
+                item = new AgedBrie(name, sellIn, quality);
             case "Sulfuras, Hand of Ragnaros":
-                return new LegendaryItem(name, sellIn, quality);
+                item = new LegendaryItem(name, sellIn, quality);
             case "Backstage passes to a TAFKAL80ETC concert":
-                return new BackstagePasses(name, sellIn, quality);
+                item = new BackstagePasses(name, sellIn, quality);
             case "Backstage passes to a GALA concert":
-                return new BackstagePasses(name, sellIn, quality);
+                item = new BackstagePasses(name, sellIn, quality);
             default:
-                return new DefaultItem(name, sellIn, quality);
+                item = new DefaultItem(name, sellIn, quality);
         }
+        if (name.startsWith("Conjured")) {
+            item = new ConjuredItemDecorator(item);
+        }
+        return item;
     }
 }
